@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guides | [[SITE_NAME]]</title>
+<meta name="description" content="Guides and explainers related to [[SITE_NAME]]'s tools.">
+<link rel="canonical" href="[[SITE_URL]]/blog/">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="/" class="logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h10M4 18h16"/></svg>
+      [[SITE_NAME]]
+    </a>
+    <nav class="nav">
+      <a href="/#tools">Tools</a>
+      <a href="/blog/">Guides</a>
+      <button class="theme-toggle" data-theme-toggle type="button">● dark</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" style="padding-bottom:0">
+    <h1>Guides</h1>
+    <p class="lead">Short explainers behind the tools. Add one &lt;a&gt; card below for every new post you publish.</p>
+  </section>
+
+  <section>
+    <div class="related-list">
+      <a href="/blog/_post-template.html">[[POST_TITLE]]</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="fine">© <span id="year"></span> [[SITE_NAME]]</span>
+    <nav>
+      <a href="/blog/">Guides</a>
+      <a href="/#tools">Tools</a>
+    </nav>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

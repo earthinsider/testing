@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Word &amp; Character Counter — Free, Instant, No Signup | [[SITE_NAME]]</title>
+<meta name="description" content="Count words, characters, sentences, and estimated reading time instantly. Runs entirely in your browser — nothing is uploaded.">
+<link rel="canonical" href="[[SITE_URL]]/tools/word-counter.html">
+<meta property="og:title" content="Word & Character Counter">
+<meta property="og:description" content="Count words, characters, sentences, and estimated reading time instantly, right in your browser.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Word & Character Counter",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="/" class="logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h10M4 18h16"/></svg>
+      [[SITE_NAME]]
+    </a>
+    <nav class="nav">
+      <a href="/#tools">Tools</a>
+      <a href="/blog/">Guides</a>
+      <button class="theme-toggle" data-theme-toggle type="button">● dark</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" style="padding-bottom:0">
+    <span class="tool-id">T-001 · text</span>
+    <h1>Word &amp; Character Counter</h1>
+    <p class="lead">Paste or type below. Counts update live — nothing leaves your browser.</p>
+  </section>
+
+  <div class="tool-panel">
+    <label for="wc-input" style="font-size:.85rem;color:var(--ink-soft)">Your text</label>
+    <textarea id="wc-input" placeholder="Start typing or paste your text here…"></textarea>
+
+    <div class="readout">
+      <span class="label">Result</span>
+      <dl>
+        <div><dt>Words</dt><dd id="wc-words">0</dd></div>
+        <div><dt>Characters</dt><dd id="wc-chars">0</dd></div>
+        <div><dt>Characters (no spaces)</dt><dd id="wc-chars-ns">0</dd></div>
+        <div><dt>Sentences</dt><dd id="wc-sentences">0</dd></div>
+        <div><dt>Reading time</dt><dd id="wc-time">0 sec</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <section>
+    <h2>How this tool counts</h2>
+    <p>Words are counted by splitting on whitespace. Reading time assumes roughly 200 words per minute, a common average for silent adult reading — adjust that number in the script below if your audience reads faster or slower.</p>
+  </section>
+
+  <section>
+    <h2>Related tools</h2>
+    <div class="related-list">
+      <a href="/tools/_tool-template.html">[[RELATED_TOOL_1]]</a>
+      <a href="/tools/_tool-template.html">[[RELATED_TOOL_2]]</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="fine">© <span id="year"></span> [[SITE_NAME]]</span>
+    <nav>
+      <a href="/blog/">Guides</a>
+      <a href="/#tools">Tools</a>
+    </nav>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="/assets/js/main.js" defer></script>
+<script>
+  (function () {
+    "use strict";
+    var input = document.getElementById("wc-input");
+    var wordsEl = document.getElementById("wc-words");
+    var charsEl = document.getElementById("wc-chars");
+    var charsNsEl = document.getElementById("wc-chars-ns");
+    var sentencesEl = document.getElementById("wc-sentences");
+    var timeEl = document.getElementById("wc-time");
+    var WPM = 200;
+
+    function update() {
+      var text = input.value;
+      var trimmed = text.trim();
+      var words = trimmed ? trimmed.split(/\s+/).length : 0;
+      var chars = text.length;
+      var charsNoSpace = text.replace(/\s/g, "").length;
+      var sentences = trimmed ? (trimmed.match(/[.!?]+(\s|$)/g) || []).length || (trimmed ? 1 : 0) : 0;
+      var seconds = Math.round((words / WPM) * 60);
+
+      wordsEl.textContent = words;
+      charsEl.textContent = chars;
+      charsNsEl.textContent = charsNoSpace;
+      sentencesEl.textContent = sentences;
+      timeEl.textContent = seconds < 60 ? seconds + " sec" : Math.round(seconds / 60) + " min";
+    }
+
+    input.addEventListener("input", update);
+    update();
+  })();
+</script>
+</body>
+</html>

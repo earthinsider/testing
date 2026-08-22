@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[[TOOL_NAME]] — Free, Instant, No Signup | [[SITE_NAME]]</title>
+<meta name="description" content="[[TOOL_META_DESCRIPTION — 150-160 chars, benefit-first.]]">
+<link rel="canonical" href="[[SITE_URL]]/tools/[[TOOL_SLUG]].html">
+<meta property="og:title" content="[[TOOL_NAME]]">
+<meta property="og:description" content="[[TOOL_META_DESCRIPTION]]">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "[[TOOL_NAME]]",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="/" class="logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h10M4 18h16"/></svg>
+      [[SITE_NAME]]
+    </a>
+    <nav class="nav">
+      <a href="/#tools">Tools</a>
+      <a href="/blog/">Guides</a>
+      <button class="theme-toggle" data-theme-toggle type="button">● dark</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" style="padding-bottom:0">
+    <span class="tool-id">[[TOOL_ID — e.g. T-003]] · [[CATEGORY]]</span>
+    <h1>[[TOOL_NAME]]</h1>
+    <p class="lead">[[TOOL_ONE_LINE_DESCRIPTION]]</p>
+  </section>
+
+  <div class="tool-panel">
+    <!--
+      Build the tool UI here: an <input>/<textarea> for input,
+      a button if it's not a live/instant tool, and a .readout
+      block for the result. Wire it up in a <script> at the
+      bottom of this file — keep each tool's JS self-contained
+      on its own page, no shared bundle, so pages stay fast
+      and independent of each other.
+    -->
+    <label for="tool-input" style="font-size:.85rem;color:var(--ink-soft)">[[INPUT_LABEL]]</label>
+    <input id="tool-input" type="text" placeholder="[[INPUT_PLACEHOLDER]]">
+
+    <div class="readout">
+      <span class="label">Result</span>
+      <dl>
+        <div><dt>[[RESULT_LABEL]]</dt><dd id="tool-result">—</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <section>
+    <h2>How to use [[TOOL_NAME]]</h2>
+    <p>[[SHORT_HOWTO_PARAGRAPH — this doubles as on-page SEO content and answers the top "people also ask" question for this tool.]]</p>
+  </section>
+
+  <section>
+    <h2>Related tools</h2>
+    <div class="related-list">
+      <a href="/tools/word-counter.html">Word &amp; Character Counter</a>
+      <a href="/tools/_tool-template.html">[[RELATED_TOOL]]</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="fine">© <span id="year"></span> [[SITE_NAME]]</span>
+    <nav>
+      <a href="/blog/">Guides</a>
+      <a href="/#tools">Tools</a>
+    </nav>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="/assets/js/main.js" defer></script>
+<script>
+  // Tool-specific logic goes here. Keep it vanilla JS, no dependencies.
+  // Example skeleton:
+  //
+  // var input = document.getElementById("tool-input");
+  // var result = document.getElementById("tool-result");
+  // input.addEventListener("input", function () {
+  //   result.textContent = /* your logic using input.value */ "";
+  // });
+</script>
+</body>
+</html>

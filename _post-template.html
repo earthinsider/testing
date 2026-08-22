@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[[POST_TITLE]] | [[SITE_NAME]]</title>
+<meta name="description" content="[[POST_META_DESCRIPTION — 150-160 chars]]">
+<link rel="canonical" href="[[SITE_URL]]/blog/[[POST_SLUG]].html">
+<meta property="og:title" content="[[POST_TITLE]]">
+<meta property="og:description" content="[[POST_META_DESCRIPTION]]">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "[[POST_TITLE]]",
+  "datePublished": "[[POST_DATE_ISO — e.g. 2026-08-22]]",
+  "dateModified": "[[POST_DATE_ISO]]",
+  "author": { "@type": "Organization", "name": "[[SITE_NAME]]" },
+  "publisher": { "@type": "Organization", "name": "[[SITE_NAME]]" }
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="/" class="logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h10M4 18h16"/></svg>
+      [[SITE_NAME]]
+    </a>
+    <nav class="nav">
+      <a href="/#tools">Tools</a>
+      <a href="/blog/">Guides</a>
+      <button class="theme-toggle" data-theme-toggle type="button">● dark</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <article style="padding:2.5rem 0 1rem">
+    <div class="article-meta">[[POST_DATE_HUMAN]] · [[POST_CATEGORY]]</div>
+    <h1>[[POST_TITLE]]</h1>
+
+    <div class="article-body">
+      <p>[[POST_INTRO_PARAGRAPH]]</p>
+
+      <h2>[[SUBHEADING_1]]</h2>
+      <p>[[BODY_PARAGRAPH]]</p>
+
+      <h2>[[SUBHEADING_2]]</h2>
+      <p>[[BODY_PARAGRAPH]]</p>
+    </div>
+  </article>
+
+  <section>
+    <h2>Related</h2>
+    <div class="related-list">
+      <a href="/tools/word-counter.html">[[RELATED_TOOL]]</a>
+      <a href="/blog/_post-template.html">[[RELATED_POST]]</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="fine">© <span id="year"></span> [[SITE_NAME]]</span>
+    <nav>
+      <a href="/blog/">Guides</a>
+      <a href="/#tools">Tools</a>
+    </nav>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>
